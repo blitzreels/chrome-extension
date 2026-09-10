@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.build/
+artifacts/
+release/
+.wxt/
+.output/
+.env
+.env.*
+**/.vercel/
+.DS_Store
+*.log
+HANDOFF.md
+store/submission-status.json
+store/screenshots/receipt.json

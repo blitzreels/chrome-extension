@@ -1,0 +1,126 @@
+:host {
+  all: initial;
+  display: inline-flex;
+  flex-shrink: 0;
+  margin-inline-start: 8px;
+  vertical-align: middle;
+}
+
+:host([data-layout="shorts"]) {
+  margin: 0 0 16px;
+}
+
+.youtube-clip {
+  --clip-fill: rgba(0, 0, 0, 0.05);
+  --clip-hover: rgba(0, 0, 0, 0.1);
+  --clip-active: rgba(0, 0, 0, 0.15);
+  --clip-text: #0f0f0f;
+  --clip-focus: #065fd4;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  box-sizing: border-box;
+  height: 40px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--clip-fill);
+  color: var(--clip-text);
+  font:
+    500 14px / 1 Roboto,
+    Arial,
+    sans-serif;
+  letter-spacing: normal;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 120ms ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+[data-theme="dark"] .youtube-clip {
+  --clip-fill: rgba(255, 255, 255, 0.1);
+  --clip-hover: rgba(255, 255, 255, 0.2);
+  --clip-active: rgba(255, 255, 255, 0.3);
+  --clip-text: #f1f1f1;
+  --clip-focus: #3ea6ff;
+}
+
+.youtube-clip:hover {
+  background: var(--clip-hover);
+}
+
+.youtube-clip:active {
+  background: var(--clip-active);
+}
+
+.youtube-clip:focus-visible {
+  outline: 2px solid var(--clip-focus);
+  outline-offset: 2px;
+}
+
+.youtube-clip__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}
+
+.youtube-clip__icon svg {
+  width: 24px;
+  height: 18px;
+}
+
+.youtube-clip--shorts {
+  flex-direction: column;
+  gap: 6px;
+  width: 56px;
+  height: 72px;
+  padding: 0;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.youtube-clip--shorts,
+.youtube-clip--shorts:hover,
+.youtube-clip--shorts:active {
+  background: transparent;
+}
+
+.youtube-clip--shorts .youtube-clip__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--clip-fill);
+  transition: background-color 120ms ease;
+}
+
+.youtube-clip--shorts:hover .youtube-clip__icon {
+  background: var(--clip-hover);
+}
+
+.youtube-clip--shorts:active .youtube-clip__icon {
+  background: var(--clip-active);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .youtube-clip,
+  .youtube-clip__icon {
+    transition: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .youtube-clip,
+  .youtube-clip--shorts .youtube-clip__icon {
+    border: 1px solid ButtonText;
+  }
+
+  .youtube-clip:focus-visible {
+    outline-color: Highlight;
+  }
+}
